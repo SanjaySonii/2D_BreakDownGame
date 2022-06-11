@@ -66,6 +66,7 @@ startBtn.addEventListener('click', () => {
 // Move ball function
 
 function moveBall() {
+    Play = false;
     let Top = 12.6
     let Left = 0
     ball.style.display = "inline"
@@ -75,7 +76,6 @@ function moveBall() {
     let T = true
     let L
     let randNo = parseInt(0 + 11 * Math.random());
-    console.log(randNo)
     if (randNo % 2 == 0) {
         L = true
     } else {
@@ -87,6 +87,7 @@ function moveBall() {
             T = false
         }
         else if (Top > 13) {
+            Play = true;
             lifeGoes.play();
             gameStart.pause();
             l = 0
